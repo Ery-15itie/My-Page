@@ -1,40 +1,86 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>えりぃーの部屋</title>
-  <!-- CSS指定-->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>えりぃーの部屋 - My Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Potta+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <img src="icon.png" alt="アイコン" class="icon"> <p class="mypage-title">Mypage</p>
+            </div>
+            <h1 class="room-title">えりぃーの部屋</h1>
+        </header>
 
-  <div class="container">
-    <div class="about">About Me</div>
-    <h1>自己紹介</h1>
+        <section class="self-introduction">
+            <div class="header-right">
+                <a href="#" class="note-link">
+                    <p>詳しくは</p>
+                    <p>noteへ</p>
+                    <span class="arrow"></span>
+                </a>
+            </div>
+            <h2>自己紹介</h2>
+            <div class="profile-details">
+                <div class="detail-item">
+                    <span class="label">名前</span>
+                    <span class="value">えりぃー</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">生まれ年</span>
+                    <span class="value">1997年</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">血液型</span>
+                    <span class="value">AB型</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">居住地</span>
+                    <span class="value">北海道</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">愛用PC</span>
+                    <span class="value">Macbook air スカイブルー</span>
+                </div>
+            </div>
+            <div class="message-box">
+                <p class="label">メッセージ</p>
+                <p class="message-text">
+                    気軽にX等で声をかけてもらえたら嬉しいです！<br>
+                    素敵な皆様とFBするなど、共に高めあっていけたら
+                </p>
+            </div>
+        </section>
 
-    <div class="icon">
-      <!-- 画像のsrcを変更 -->
-      <img src="アイコン.png" width="150" height="150">
+        <section class="passion-statement">
+            <p class="quote">未経験だからこそ</p>
+            <p class="quote">自分の軌跡から価値をつくる</p>
+            <p class="goal">未来にワクワクできるエンジニアになりたい</p>
+        </section>
+
+        <section class="portfolio">
+            <h2 class="section-title">ポートフォリオ</h2>
+            <div class="portfolio-content">
+                <div class="portfolio-image-wrapper">
+                    <img src="portfolio-placeholder.jpg" alt="ポートフォリオ画像" class="portfolio-image"> </div>
+                <p class="coming-soon">Commig soon...</p>
+            </div>
+        </section>
+
+        <section class="sns-links">
+            <h2 class="section-title">各種SNS</h2>
+            <div class="sns-icons">
+                <a href="#" class="sns-icon-link">
+                    <img src="twitter-logo.png" alt="Twitterアイコン" class="sns-icon"> </a>
+                </div>
+        </section>
     </div>
-
-    <div class="info">
-      <p><span class="label">名前:</span> えりぃー</p>
-      <p><span class="label">生まれ年:</span> 1997年</p>
-      <p><span class="label">血液型:</span> AB型</p>
-      <p><span class="label">居住地:</span> 北海道</p>
-      <p><span class="label">愛用PC:</span> Macbook Air スカイブルー</p>
-      <p><span class="label">目標:</span> エンジニアになるぞ!!</p>
-    </div>
-
-    <div class="message">
-      <strong>皆様にメッセージ</strong><br>
-      気軽に声をかけていただけたら嬉しいです！<br>
-      FBなどし合って高めあっていきましょう
-    </div>
-  </div>
 </body>
-
 </html>
