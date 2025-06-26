@@ -1,67 +1,397 @@
+/* 基本的なリセットとフォント設定 */
 body {
-  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  background: #f5f5f5;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    /* 全体的にHachi Maru Popを適用 */
+    font-family: 'Hachi Maru Pop', cursive, sans-serif;
+    color: #333;
+    background-color: #fffacd; /* 全体の背景色を淡い黄色に統一 */
+    min-height: 100vh; /* 最小高さをビューポートの高さに */
+    position: relative; /* 背景画像を配置するための基準 */
 }
+
+/* 草花の背景イメージ */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('grass-flower-bg.png'); /* 草花の背景画像へのパスを適切に設定してください */
+    background-repeat: no-repeat;
+    background-position: top left, bottom right; /* 画像の配置を調整 */
+    background-size: 30% auto, 25% auto; /* 画像のサイズを調整 */
+    opacity: 0.8; /* 透明度を調整してコンテンツが見やすいように */
+    z-index: -1; /* コンテンツの下に配置 */
+    pointer-events: none; /* 背景画像がクリックイベントをブロックしないように */
+}
+
 
 .container {
-  max-width: 500px;
-  margin: 2rem auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    max-width: 960px; /* 全体のコンテンツ幅を制限 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 20px;
+    position: relative; /* 自己紹介を絶対配置するための基準 */
+    z-index: 1; /* コンテンツが背景より手前に来るように */
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+/* ヘッダーセクションのスタイル */
+.header {
+    display: flex;
+    justify-content: flex-start; /* 左寄せ */
+    align-items: flex-start; /* 上寄せ */
+    padding: 20px 0;
+    position: relative;
+    width: 60%; /* 自己紹介セクションとのバランスで調整 */
 }
 
-.about {
-  font-family: cursive;
-  font-size: 1.2rem;
-  color: #777;
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-right: 50px; /* タイトルとの間隔 */
 }
 
 .icon {
-  width: 120px;
-  height: 120px;
-  margin: 1.5rem auto;
-  background: #f5c25a;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 180px; /* アイコンのサイズ */
+    height: 180px;
+    border-radius: 50%; /* 丸いアイコン */
+    object-fit: cover;
+    margin-right: 10px;
+    margin-top: 800px; /* アイコンの上の余白 */
+    border: 2px solid #ddd; /* アイコンの枠線 */
+
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+
+
+    margin:0 auto; /* アイコンを中央に配置 */
+    position:absolute
 }
 
-.icon img {
-  width: 70px;
-  height: auto;
+.mypage-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #555;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
 }
 
-.info {
-  text-align: left;
-  margin-top: 1rem;
+.room-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
 }
 
-.info p {
-  margin: 0.5rem 0;
+/* 自己紹介セクションのスタイル */
+.self-introduction {
+    background-color: #fffacd; /* 淡い黄色 */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute; /* 親要素 .container に対して絶対配置 */
+    top: 20px; /* 上からの位置 */
+    right: 20px; /* 右からの位置 */
+    width: 450px; /* 自己紹介セクションの固定幅 */
+    box-sizing: border-box; /* paddingとborderをwidthに含める */
+    z-index: 2; /* ヘッダーより手前に来るように */
 }
 
-.label {
-  font-weight: bold;
-  display: inline-block;
-  width: 100px;
+.header-right {
+    position: absolute; /* 自己紹介セクションに含めるように配置変更 */
+    top: 0;
+    right: 0;
+    background-color: #fff; /* 「詳しくはnoteへ」の背景 */
+    padding: 5px 10px; /* パディングを調整 */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.8em; /* フォントサイズを調整 */
+    font-family: 'Hachi Maru Pop', cursive, sans-serif; /* その他をはちまるポップに統一 */
 }
 
-.message {
-  background: #f3f3f3;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-top: 2rem;
-  text-align: left;
+
+.note-link {
+    text-decoration: none;
+    color: #666;
+    text-align: center;
+    display: block;
+}
+
+.note-link p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666; /* 下向き矢印 */
+    margin-top: 5px;
+}
+
+.self-introduction h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #555;
+    margin-bottom: 25px;
+    position: relative;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
+}
+
+.self-introduction h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #aaddcc; /* 下線色 */
+    margin: 10px auto 0;
+}
+
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 左寄せ */
+    gap: 15px 30px; /* 行と列の隙間 */
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: baseline;
+    width: calc(50% - 15px); /* 2列表示、ギャップを考慮 */
+}
+
+.detail-item .label {
+    font-weight: bold;
+    color: #666;
+    margin-right: 15px;
+    min-width: 80px; /* ラベルの幅を揃える */
+    font-family: 'Hachi Maru Pop', cursive, sans-serif; /* その他をはちまるポップに統一 */
+}
+
+.detail-item .value {
+    color: #333;
+    flex-grow: 1; /* 値が長くなっても対応できるように */
+    font-family: 'Hachi Maru Pop', cursive, sans-serif; /* その他をはちまるポップに統一 */
+}
+
+.message-box {
+    background-color: #fefefe; /* メッセージボックスの背景 */
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.message-box .label {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
+}
+
+.message-text {
+    line-height: 1.6;
+    color: #444;
+    font-family: 'Hachi Maru Pop', cursive, sans-serif; /* その他をはちまるポップに統一 */
+}
+
+/* 意気込みセクションのスタイル */
+.passion-statement {
+    text-align: center;
+    margin-top: 250px; /* 自己紹介セクションの高さと位置を考慮して調整 */
+    margin-bottom: 60px;
+;
+    z-index: 1; /* 自己紹介より下にしない */
+}
+
+.passion-statement .quote {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-family: 'Hachi Maru Pop', cursive, sans-serif; /* その他をはちまるポップに統一 */
+}
+
+.passion-statement .goal {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #444;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block; /* 下線を引くためにインラインブロックに */
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
+}
+
+.passion-statement .goal::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px; /* テキストからの距離 */
+    height: 2px;
+    background-color: #aaddcc; /* 下線の色 */
+}
+
+/* ポートフォリオセクションのスタイル */
+.portfolio {
+    margin-top: 40px;
+    background-color: transparent; /* 背景色なし */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center; /* コンテンツを中央寄せ */
+}
+
+.portfolio .section-title {
+    font-size: 1.8em;
+    color: #555;
+    margin-bottom: 25px;
+    position: relative;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
+}
+
+.portfolio .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #aaddcc; /* 下線色 */
+    margin: 10px auto 0;
+}
+
+.portfolio-content {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央寄せ */
+    gap: 20px; /* アイテム間の隙間 */
+}
+
+.portfolio-image-wrapper {
+    width: 80%; /* 画像の幅を調整 */
+    max-width: 400px; /* 最大幅 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* 角丸に画像を収める */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.coming-soon {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #888;
+    margin-top: 10px;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
+}
+
+/* 各種SNSセクションのスタイル */
+.sns-links {
+    margin-top: 40px;
+    background-color: #90ee90; /* 緑色 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.sns-links .section-title {
+    font-size: 1.8em;
+    color: #fff; /* タイトル色を白に */
+    margin-bottom: 25px;
+    position: relative;
+    font-family: 'Potta One', cursive, sans-serif; /* タイトルをぽったワンに統一 */
+}
+
+.sns-links .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #e0ffe0; /* 下線色を明るい緑に */
+    margin: 10px auto 0;
+}
+
+.sns-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sns-icon-link {
+    display: block;
+}
+
+.sns-icon {
+    width: 50px; /* SNSアイコンのサイズ */
+    height: 50px;
+    transition: transform 0.3s ease; /* ホバーエフェクト */
+}
+
+.sns-icon:hover {
+    transform: scale(1.1); /* ホバーで少し拡大 */
+}
+
+/* レスポンシブデザインの調整 */
+@media (max-width: 992px) { /* 自己紹介が右に固定されるためブレイクポイントを調整 */
+    .self-introduction {
+        position: static; /* 絶対配置を解除 */
+        width: auto; /* 幅を自動に */
+        margin: 30px auto; /* 中央寄せ */
+    }
+
+    .header {
+        width: 100%; /* ヘッダーを全幅に */
+        justify-content: center; /* 中央寄せ */
+        flex-wrap: wrap; /* 要素を折り返す */
+        text-align: center;
+    }
+    
+    .header-left {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .room-title {
+        margin-top: 15px;
+    }
+
+    .passion-statement {
+        margin-top: 60px; /* 自己紹介が上に移動するため余白を調整 */
+    }
+
+    .profile-details {
+        flex-direction: column; /* 縦並びにする */
+        gap: 10px;
+        align-items: flex-start; /* ラベルを左寄せ */
+    }
+
+    .detail-item {
+        width: 100%; /* 全幅にする */
+        justify-content: flex-start; /* アイテムを左寄せ */
+    }
+
+    .detail-item .label {
+        min-width: 80px; /* ラベルの最小幅を再設定 */
+        margin-right: 10px;
+    }
+
+    .header-right {
+        position: static; /* 自己紹介セクションから切り離す */
+        margin: 15px auto 0; /* 自己紹介の下に中央寄せで配置 */
+    }
+}
+
+@media (max-width: 768px) {
+    /* 必要であればさらに調整 */
 }
