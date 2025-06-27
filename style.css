@@ -9,7 +9,7 @@ body {
     overflow-x: hidden; /* 横スクロールバーの出現を防ぐ */
 }
 
-/* 草花の背景イメージ　　今後実装予定 */
+/* 草花の背景イメージ */
 body::before {
     content: '';
     position: absolute;
@@ -17,21 +17,22 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('grass-flower-bg.png'); /* 草花の背景画像へのパスを適切に設定する */
+    background-image: url(flower.png); /* 草花の背景画像へのパスを適切に設定する */
     background-repeat: no-repeat;
     /* PC・スマホ共通で、中央下と中央上に配置 */
     background-position: top center, bottom center;
-    background-size: 30% auto, 25% auto; /* サイズも共通で設定 */
-    opacity: 0.8;
-    z-index: -1;
+    background-size: 20% auto, 25% auto; /* サイズも共通で設定 */
+    opacity: 0.6; /* 透過度を設定 */
     pointer-events: none;
+    z-index: -1; /* 背景として最背面に配置 */
+
 }
+
 
 .container {
     max-width: 768px; /* PCでもコンテンツ幅をスマホ寄りに狭める */
     margin: 0 auto; /* 中央寄せ */
     padding: 20px;
-    z-index: 1;
 }
 
 /* ヘッダーセクションのスタイル */
@@ -42,6 +43,7 @@ body::before {
     padding: 20px 0;
     width: 100%;
     text-align: center; /* テキストも中央寄せ */
+    z-index: 2;
 }
 
 .header-left {
@@ -58,6 +60,7 @@ body::before {
     object-fit: cover;
     margin-bottom: 10px; /* マイページタイトルとの間に余白 */
     border: 2px solid #ddd;
+    z-index: 2; /* アイコンが他の要素より前面に表示されるように */
 }
 
 .mypage-title {
@@ -87,7 +90,7 @@ body::before {
     max-width: 100%; /* 親要素の幅を超えないように */
     margin: 30px auto; /* 中央寄せ、上下に余白 */
     box-sizing: border-box;
-    z-index: 1; /* 他のコンテンツとの重なりがないため、z-indexはあまり重要ではないが念のため */
+    z-index: 1; 
 }
 
 .header-right {
@@ -298,7 +301,7 @@ body::before {
 
 .sns-links .section-title {
     font-size: 1.8em;
-    color: #fff;
+    color: #333;
     margin-bottom: 25px;
     position: relative;
     font-family: 'Potta One', cursive, sans-serif;
@@ -333,4 +336,4 @@ body::before {
     transform: scale(1.1);
 }
 
-/* メディアクエリは不要。全デバイスで共通の縦長レイアウトに変更*/
+/* 全デバイスで共通の縦長レイアウトに変更*/
