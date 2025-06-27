@@ -21,7 +21,7 @@ body::before {
     background-repeat: no-repeat;
     /* PC・スマホ共通で、中央下と中央上に配置 */
     background-position: top center, bottom center;
-    background-size: 20% auto, 25% auto; /* サイズも共通で設定 */
+    background-size: 22% auto, 40% auto; /* サイズも共通で設定 */
     opacity: 0.6; /* 透過度を設定 */
     pointer-events: none;
     z-index: -1; /* 背景として最背面に配置 */
