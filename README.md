@@ -10,6 +10,4 @@
  
 
 
-## ミニゲーム案イメージ
-![image](https://github.com/Ery-15itie/My-Page/issues/1#issue-3176114223)
-ゲーム開発したらプロフページから飛べるようにする
+## ミニゲーム、制作しました
